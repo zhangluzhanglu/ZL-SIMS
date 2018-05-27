@@ -7,6 +7,7 @@ package view.student;
 * @描述 登陆界面类
 */
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
@@ -19,9 +20,12 @@ public class Login extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;// 序列化.为了保持版本的兼容性，即在版本升级时反序列化仍保持对象的唯一
 	
 	// 声明要用到的组件
-	JPanel jpanel;// 容器组件
-	JButton jbutton;// 按钮
-	JLabel jlable;// 文字标签
+	private JPanel jpanel1;// 容器组件
+	private JLabel usernameJLable;// 文字标签：用户名
+	private JTextField usernameJTextField;//文本域：用户名
+	private JLabel passwordJLabel;// 文字标签：密码
+	private JPasswordField passwordJPasswordField;//文本域：密码
+	private JButton loginJButton;// 登陆按钮
 	
 
 	/**
@@ -32,27 +36,47 @@ public class Login extends JFrame implements ActionListener {
 		
 
 		//初始化各组件
-		jpanel = new JPanel();
-		jpanel.setLayout(null);//设置布局NULL  
+		jpanel1 = new JPanel();
+		jpanel1.setLayout(null);//设置布局NULL  
 		
-		jbutton = new JButton("登陆");
-		jbutton.setBounds(138, 26, 90, 30); 
+
 		
-		jlable=new JLabel("请输入密码");
-		jlable.setBounds(50, 50, 100, 50); 
+		usernameJLable=new JLabel("请输入用户名 :   ",JLabel.RIGHT);
+		usernameJLable.setToolTipText("请输入用户名...");
+		usernameJLable.setBounds(250, 200, 100, 30); 
+		usernameJTextField= new JTextField(20);
+		usernameJTextField.setBounds(350, 200, 200, 30); 
+		
+		passwordJLabel=new JLabel("请输入密码 :   ",JLabel.RIGHT);
+		passwordJLabel.setBounds(250, 250, 100, 30); 
+		passwordJPasswordField= new JPasswordField(20);
+		passwordJPasswordField.setEchoChar('*');
+		passwordJPasswordField.setBounds(350, 250, 200, 30); 
+		
+		loginJButton = new JButton("登陆");
+		loginJButton.setBounds(260, 300, 300, 30); 
+
 
 		//将各组件放入窗体中
-		this.add(jpanel);
+		Container container=this.getContentPane();//获取窗体的最外层容器
+		container.add(jpanel1);
 
-		jpanel.add(jbutton);
-		jpanel.add(jlable);
+		
+		jpanel1.add(usernameJLable);
+		jpanel1.add(usernameJTextField);
+		jpanel1.add(passwordJLabel);
+		jpanel1.add(passwordJPasswordField);
+		jpanel1.add(loginJButton);
+		
 		
 		
 		//设置窗体的一些信息
-		this.setTitle("学生信息管理系统--登陆");
+		this.setTitle("学生信息管理系统");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setExtendedState(MAXIMIZED_BOTH);
+		this.setSize(800,600);
+		this.setLocation(250,50);
 		this.setVisible(true);
+		this.setResizable(false);//窗体大小不可变
 
 		
 
