@@ -50,12 +50,10 @@ public class Login extends JFrame implements ActionListener {
 		loginJButton = new JButton("登陆");
 		loginJButton.setBounds(300, 340, 80, 30);
 		loginJButton.addActionListener(this);// 为登陆按钮增加事件监听器
-		
+
 		resetJButton = new JButton("重置");
 		resetJButton.setBounds(430, 340, 80, 30);
 		resetJButton.addActionListener(this);// 为登陆按钮增加事件监听器
-		
-		
 
 		// 将各组件放入窗体中
 		Container container = this.getContentPane();// 获取窗体的最外层容器
