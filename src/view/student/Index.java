@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import javax.naming.CommunicationException;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -47,7 +48,8 @@ public class Index extends JFrame implements ActionListener {
 		// 提取数据的表头
 		GetFields fieldsObj = new GetFields();
 		String[] fieldArray = fieldsObj.getAllField("StudentInfoBean");
-		String[] columnNames = fieldArray;// 定义表格列名数组
+		String[] columnNames = fieldArray;
+		// 定义表格列名数组
 		// 将列名数组转换为中文
 		for (int i = 0; i < columnNames.length; i++) {
 			switch (columnNames[i]) {
