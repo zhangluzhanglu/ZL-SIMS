@@ -11,6 +11,9 @@ import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import dao.impl.UsersOperation;
+import bean.Users;
+import view.student.Index;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -88,10 +91,13 @@ public class Login extends JFrame implements ActionListener {
 		if (e.getSource() == loginJButton) // 点击登录
 		{
 			// 获取用户名和密码
-			String unsername = usernameJTextField.getText();
+			String username = usernameJTextField.getText();
 			String password = String.valueOf(passwordJPasswordField.getPassword());
-			System.out.println(unsername);
-			System.out.println(password);
+		    boolean loginResult=new UsersOperation().login(new Users(username,password));//如果为true，表示登陆成功
+		    System.out.println(loginResult);
+		    if(loginResult){
+		    	new Index(this);
+		    }
 		}
 		if (e.getSource() == resetJButton) // 点击重置
 		{

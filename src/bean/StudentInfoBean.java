@@ -98,10 +98,10 @@ public class StudentInfoBean extends AbstractBasePeople {
 	 */
 	@Override
 	public String toString() {
-		return "StudentInfoBean [number=" + number + ", department=" + department + ", major=" + major + ", classNum="
-				+ classNum + ", getName()=" + getName() + ", getAge()=" + getAge() + ", getSex()=" + getSex()
-				+ ", getIdentify()=" + getIdentify() + ", getSpeciality()=" + getSpeciality() + ", getAddress()="
-				+ getAddress() + ", getHeight()=" + getHeight() + "]";
+		return number + "," + department + "," + major + ","
+				+ classNum + "," + getName() + "," + getAge() + "," + getSex()+ "," + getHeight() 
+				+ "," + getIdentify() + "," + getSpeciality() + ", "
+				+ getAddress() ;
 	}
 
 
