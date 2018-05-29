@@ -22,22 +22,23 @@ public class ArrayManager {
 	}
 
 	/**
-	 * @描述 向数组末尾添加新的元素，新元素是一个数组
+	 * @描述  重载函数，向数组末尾添加新的元素，新元素是一个数组
 	 */
-	// public Object[] AddElementToArray(Object[] oldArray,Object[] obj[]) {
-	// Object[] columnNames = new Object[oldArray.length + obj.length];
-	// for (int i = 0; i < columnNames.length; i++) {
-	// if (i >= oldArray.length)
-	// columnNames[i] = obj[];
-	// else
-	// columnNames[i] = oldArray[i];
-	// }
-	// return columnNames;
-	// }
+	public Object[] AddElementToArray(Object[] oldArray, Object[] oldArray1) {
+		Object[] columnNames = new Object[oldArray.length + oldArray1.length];
+		for (int i = 0; i < oldArray.length; i++) {
+			columnNames[i] = oldArray[i];
+		}
+		for (int j = 0; j < oldArray1.length; j++) {
+			columnNames[oldArray.length + j] = oldArray1[j];
+		}
+		return columnNames;
+	}
 
 	public static void main(String[] args) {
 		Object[] array = { 1, 2, 3, 4 };
-		Object[] newArray = (new ArrayManager().AddElementToArray(array, 5));
+		Object[] array1 = { 5, 6, 7, 8 };
+		Object[] newArray = (new ArrayManager().AddElementToArray(array, array1));
 		for (Object i : newArray) {
 			System.out.println((int) i);
 		}
